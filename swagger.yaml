@@ -1,0 +1,44 @@
+swagger: "2.0"
+info:
+  description: "This is a server for a file upload REST service API"
+  version: "1.0.0"
+  title: "File Upload REST service"
+  termsOfService: "http://swagger.io/terms/"
+  contact: 
+    email: "ejiofor.ikechukwu@babbangona.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "localhost:3000"
+basePath: "/"
+tags:
+- name: "File Upload "
+  description: "Uploading and storing files(images, audios & videos) to aws s3 bucket"
+
+schemes:
+- "http"
+
+paths:
+  /upload:
+    post:
+       tags:
+       - "Files"
+       summary: "Upload File"
+       description: ""
+       operationId: "uploadFile"
+       consumes:
+       - "multipart/form-data"
+       parameters:
+       - in: "formData"
+         name: "file"
+         description: "The uploaded file data"
+         required: true
+         type: file
+         
+       responses:
+        "400":
+         description: "Uable to upload file. Please try again."
+         
+      
+  
+      
